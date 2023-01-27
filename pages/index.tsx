@@ -2,12 +2,16 @@ import Head from "next/head";
 import StitchesLogo from "../components/StitchesLogo";
 import { styled } from "../stitches.config";
 import { Client, Mnemonic } from "jmes";
+
 const Box = styled("div", {});
+
 const Text = styled("p", {
   fontFamily: "$system",
   color: "$hiContrast",
 });
+
 const Button = styled("button", {});
+
 const Link = styled("a", {
   fontFamily: "$system",
   textDecoration: "none",
@@ -42,6 +46,7 @@ const client = new Client({
     },
   },
 });
+
 const mnemonic = new Mnemonic(
   "shrimp various silver merge kidney kitten winter pluck smooth kidney enemy bulb script plug private margin leader repair enact clever duck woman luxury muscle"
 );
@@ -54,8 +59,8 @@ const sendTransaction = async () => {
     {
       recipientAddress: "jmes1jg4hs0qnytzl873zme2hp378na64z2e75v8xn7",
       recipientAmount: 200,
-    }
-    //'http://51.38.52.37:1888'
+    },
+    "http://51.38.52.37:1889"
   );
   console.log({ res });
   return res;
